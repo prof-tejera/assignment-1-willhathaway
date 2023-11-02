@@ -5,6 +5,7 @@ import Stopwatch from "../components/timers/Stopwatch";
 import Countdown from "../components/timers/Countdown";
 import XY from "../components/timers/XY";
 import Tabata from "../components/timers/Tabata";
+import Container from "../components/generic/Container";
 
 const Timers = styled.div`
   display: flex;
@@ -13,13 +14,18 @@ const Timers = styled.div`
 `;
 
 const Timer = styled.div`
-  border: 1px solid gray;
-  padding: 20px;
-  margin: 10px;
+  padding: 10px;
+  margin: 5px;
   font-size: 1.5rem;
 `;
 
-const TimerTitle = styled.div``;
+const TimerTitle = styled.div`
+  font-weight: 900;
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  padding: 5px;
+`;
 
 const TimersView = () => {
   const timers = [
@@ -31,11 +37,13 @@ const TimersView = () => {
 
   return (
     <Timers>
-      {timers.map((timer) => (
-        <Timer key={`timer-${timer.title}`}>
+      {timers.map((timer, i) => (
+        <Container>
+        <Timer key={`timer-{timer.title}-`+i}>
           <TimerTitle>{timer.title}</TimerTitle>
           {timer.C}
         </Timer>
+        </Container>
       ))}
     </Timers>
   );
