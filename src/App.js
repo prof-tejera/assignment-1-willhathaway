@@ -6,7 +6,7 @@ import DocumentationView from "./views/DocumentationView";
 import TimersView from "./views/TimersView";
 
 const Container = styled.div`
-  background: #f0f6fb;
+  background: "black";
   height: 100vh;
   overflow: auto;
 `;
